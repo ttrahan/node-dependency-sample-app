@@ -28,7 +28,7 @@ build:
     - node $SHIPPABLE_BUILD_DIR/example.js
 
   post_ci:
-    - echo "finished building app"
+    - echo "finished build"
 
   on_success:
     - echo "successfully built app"
@@ -53,6 +53,11 @@ resources:
       counter: module.master.1 
 
 jobs:
+  - name: node-dependency-sample-module_runCI
+    type: runCI
+    steps:
+      - OUT: npm-module-trigger
+
   - name: node-dependency-sample-app_runCI
     type: runCI
     steps:
