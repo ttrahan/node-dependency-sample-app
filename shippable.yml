@@ -25,9 +25,10 @@ build:
     # npm mirrors can sometimes be flaky, better to use shippable_retry
     # http://docs.shippable.com/ci/advancedOptions/retry/
     - shippable_retry npm install
+    - node $SHIPPABLE_BUILD_DIR/example.js
 
   post_ci:
-    - node $SHIPPABLE_BUILD_DIR/example.js
+    - echo "finished building app"
 
   on_success:
     - echo "successfully built app"
