@@ -9,10 +9,19 @@ What you need to run this app:
 ### Setup
 
 * Clone this repo:   
-```git clone https://github.com/ttrahan/node-dependency-sample-app.git```
+```
+$ git clone https://github.com/ttrahan/node-dependency-sample-app.git
+```
+
+* Change into the app directory:
+```
+$ cd node-dependency-sample-app
+```
 
 * Install the dependencies (from the command line):  
-```npm install```
+```
+$ npm install
+```
 
 When finished, you should see the following tree structure:
 ```
