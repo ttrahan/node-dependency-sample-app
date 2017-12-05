@@ -27,8 +27,7 @@ build:
     - docker build -t $DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER .
 
   on_success:
-    - shipctl put_resource_state npm-module versionName $BRANCH.$BUILD_NUMBER
-  
+    - echo "successfully built app"
 
 # Integrations are used to connect external resources to CI
 # http://docs.shippable.com/integrations/overview/
@@ -44,6 +43,10 @@ integrations:
       on_pull_request: never
 
 resources:
+  - name: npm-module-trigger
+    type: trigger
+    version:
+      counter: 
 
 jobs:
   - name: node-dependency-sample-app_runCI
