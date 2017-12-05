@@ -1,9 +1,5 @@
 [![Node.Js Connect Logo](http://www.nodejsconnect.com//sites/default/themes/drupalconnect/images/layout/logo-lo.png)](http://www.nodejsconnect.com/)
 
-# Creating your first Node.js module
-
-## Code Examples for [Node.Js Connect](http://www.nodejsconnect.com/) Blog Post: Creating your first Node.js module.
-
 ## Dependencies
 
 What you need to run this app:
@@ -14,16 +10,31 @@ What you need to run this app:
 
 ### Setup
 
-* Clone this repo: git clone https://github.com/kevinchisholm/creating-your-first-node.js-module.git
+* Clone this repo: 
+`git clone https://github.com/ttrahan/node-dependency-sample-app.git`
 
 ### Before running the example code:
 
-* run this in your terminal, while in the root of the project: **npm install**
+* run this in your terminal to install the dependencies
+`npm install`
 
-### Running the examples
+When finished, you should see the following tree structure:
+```
+.
+├── README.md
+├── example.js
+├── node_modules
+│   └── dateTools
+│       ├── README.md
+│       ├── index.js
+│       └── package.json
+├── package.json
+└── shippable.yml
+```
 
-#### Example # 1:
+### Run the example app from the command line
 
-* node example-1.js
-
+```
+$ node example.js
+```
 
