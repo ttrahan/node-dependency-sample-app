@@ -59,5 +59,10 @@ To run this example in Shippable:
 4. Commit changes to either repo or [manually run](http://docs.shippable.com/platform/visibility/single-pane-of-glass-spog/#runpause-job) a build from the SPOG view
 
 
+Once finished, you'll have set up the following workflow in Shippable:
+
+![image](https://user-images.githubusercontent.com/4467650/33637076-cb9ae996-d9d3-11e7-8483-f56d710b2574.png)
+
+
 
 
