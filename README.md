@@ -1,5 +1,3 @@
-[![Node.Js Connect Logo](http://www.nodejsconnect.com//sites/default/themes/drupalconnect/images/layout/logo-lo.png)](http://www.nodejsconnect.com/)
-
 ## Dependencies
 
 What you need to run this app:
@@ -10,7 +8,7 @@ What you need to run this app:
 
 ### Setup
 
-* Clone this repo: 
+* Clone this repo:   
 `git clone https://github.com/ttrahan/node-dependency-sample-app.git`
 
 ### Before running the example code:
