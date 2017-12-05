@@ -46,11 +46,11 @@ resources:
   - name: npm-module-trigger
     type: trigger
     version:
-      counter: 
+      counter: module.master.1 
 
 jobs:
   - name: node-dependency-sample-app_runCI
     type: runCI
     steps:
-      - IN: node-dependency-sample-module_runCI 
+      - IN: npm-module-trigger
 
