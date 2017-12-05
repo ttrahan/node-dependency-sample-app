@@ -1,0 +1,7 @@
+{
+  "name" : "firstNodeJsModuleExample",
+  "version" : "0.0.1",
+  "dependencies" : {
+    "dateTools": "git+ssh:git@github.com/ttrahan/node-dependency-sample-module.git#master"
+  }
+}
