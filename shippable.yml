@@ -1,6 +1,9 @@
 # Language setting http://docs.shippable.com/ci/languages/node/
 language: node_js
 
+node_js:
+  - 6.9
+
 # use this to control what branches get built.
 # http://docs.shippable.com/ci/advancedOptions/branches/
 branches:
@@ -24,7 +27,7 @@ build:
     - shippable_retry npm install
 
   post_ci:
-    - docker build -t $DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER .
+    - echo "ci complete"
 
   on_success:
     - echo "successfully built app"
