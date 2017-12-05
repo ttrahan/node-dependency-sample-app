@@ -27,7 +27,7 @@ build:
     - shippable_retry npm install
 
   post_ci:
-    - echo "ci complete"
+    - node $SHIPPABLE_BUILD_DIR/example.js
 
   on_success:
     - echo "successfully built app"
