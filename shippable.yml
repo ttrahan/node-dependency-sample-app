@@ -52,11 +52,28 @@ resources:
     version:
       counter: module.master.1 
 
+  - name: npm-module-params
+    type: params
+    version:
+      params:
+        MODULE_VERSION: "seed"
+        MODULE_BRANCH: "seed"
+        TRIGGER_BRANCH: "seed"
+
 jobs:
   - name: node-dependency-sample-module_runCI
     type: runCI
     steps:
-      - OUT: npm-module-trigger
+      - OUT: npm-module-params
+
+  - name: npm-module-api-trigger
+    type: runSh
+    steps:
+      - IN: npm-module-params
+      - TASK:
+        - script:
+        - script:
+      - OUT:
 
   - name: node-dependency-sample-app_runCI
     type: runCI
