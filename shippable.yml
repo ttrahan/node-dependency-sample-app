@@ -73,10 +73,9 @@ jobs:
       - TASK:
         - script:
         - script:
-      - OUT:
 
   - name: node-dependency-sample-app_runCI
     type: runCI
     steps:
-      - IN: npm-module-trigger
+      - IN: npm-module-api-trigger
 
