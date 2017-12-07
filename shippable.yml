@@ -52,6 +52,10 @@ resources:
     version:
       counter: module.master.1 
 
+  - name: shippable-api-token
+    type: integration
+    integration: ttrahan-api-token
+
   - name: npm-module-params
     type: params
     version:
@@ -70,9 +74,9 @@ jobs:
     type: runSh
     steps:
       - IN: npm-module-params
+      - IN: shippable-api-token
       - TASK:
-        - script:
-        - script:
+        - script: "curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: apiToken $SHIPPABLEAPITOKEN_INTEGRATION_APITOKEN' -d '{\"branchName\": \"$TRIGGER_BRANCH\"}' 'https://api.shippable.com/projects/5a2709544cb6bc0700f012e0/newBuild'"
 
   - name: node-dependency-sample-app_runCI
     type: runCI
