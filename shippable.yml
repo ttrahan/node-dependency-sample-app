@@ -76,6 +76,7 @@ jobs:
       - IN: npm-module-params
       - IN: shippable-api-token
       - TASK:
+        - script: echo ${#APITOKEN}
         - script: "curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: apiToken ${APITOKEN}' -d '{\"branchName\": \"$TRIGGER_BRANCH\"}' 'https://api.shippable.com/projects/5a2709544cb6bc0700f012e0/newBuild'"
 
   - name: node-dependency-sample-app_runCI
