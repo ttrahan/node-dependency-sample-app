@@ -77,8 +77,8 @@ jobs:
       - IN: shippable-api-token
       - TASK:
         - script: echo ${SHIPPABLEAPITOKEN_PATH}
-        - script: echo ${#SHIPPABLEAPITOKEN_NAME}
-        - script: echo ${#SHIPPABLEAPITOKEN_INTEGRATION_APITOKEN}
+        - script: echo ${SHIPPABLEAPITOKEN_NAME}
+        - script: echo ${SHIPPABLEAPITOKEN_INTEGRATION_APITOKEN}
         - script: echo ${#SHIPPABLEAPITOKEN_APITOKEN}
         - script: printenv | grep APITOKEN
         - script: "curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: apiToken $SHIPPABLEAPITOKEN_APITOKEN' -d '{\"branchName\": \"$TRIGGER_BRANCH\"}' 'https://api.shippable.com/projects/5a2709544cb6bc0700f012e0/newBuild'"
