@@ -47,7 +47,8 @@ integrations:
       on_pull_request: never
 
 resources:
-  # References Subscription Integration pointing to Key-Value Account Integration # holding Shippable API Token 
+  # References Subscription Integration pointing to Key-Value Account Integration 
+  # that holds Shippable API Token.
   # Create Shippable API Token: 
   #   http://docs.shippable.com/platform/management/account/api-tokens
   # Create Key-Value Account Integration to hold API Token: 
