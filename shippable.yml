@@ -53,6 +53,7 @@ resources:
   #   http://docs.shippable.com/platform/management/account/api-tokens
   # Create Key-Value Account Integration to hold API Token: 
   #   http://docs.shippable.com/platform/integration/key-value
+  #   use key = 'APITOKEN' value = {your Shippable API Token}
   # Integration resource: 
   #   http://docs.shippable.com/platform/workflow/resource/integration
   - name: shippable-api-token
