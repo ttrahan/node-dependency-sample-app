@@ -47,15 +47,20 @@ integrations:
       on_pull_request: never
 
 resources:
-  - name: npm-module-trigger
-    type: trigger
-    version:
-      counter: module.master.1 
-
+  # References Subscription Integration pointing to Key-Value Account Integration # holding Shippable API Token 
+  # Create Shippable API Token: 
+  #   http://docs.shippable.com/platform/management/account/api-tokens
+  # Create Key-Value Account Integration to hold API Token: 
+  #   http://docs.shippable.com/platform/integration/key-value
+  # Integration resource: 
+  #   http://docs.shippable.com/platform/workflow/resource/integration
   - name: shippable-api-token
     type: integration
     integration: ttrahan-api-token
 
+  # Resource to store values output from 'module' runCI job
+  # Params resource: 
+  #   http://docs.shippable.com/platform/workflow/resource/params
   - name: npm-module-params
     type: params
     version:
@@ -65,19 +70,25 @@ resources:
         TRIGGER_BRANCH: "seed"
 
 jobs:
+  # CI job for 'module' (CI config in node-dependency-sample-module repo)
   - name: node-dependency-sample-module_runCI
     type: runCI
     steps:
       - OUT: npm-module-params
 
+  # Job to trigger 'app' build via Shippable API
   - name: npm-module-api-trigger
     type: runSh
     steps:
+      # this will inject the variable values output from 'module' CI job
       - IN: npm-module-params
+      # this will inject the APITOKEN key value from the Subscription Integration
       - IN: shippable-api-token
       - TASK:
+        # env var APITOKEN comes from the shippable-api-token input
         - script: 'curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" --header "Authorization: apiToken ${APITOKEN}" "https://api.shippable.com/projects/5a2709544cb6bc0700f012e0/newBuild?branch=${TRIGGER_BRANCH}"'
 
+  # CI job for 'app' (CI config above)
   - name: node-dependency-sample-app_runCI
     type: runCI
     steps:
